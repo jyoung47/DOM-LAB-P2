@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* CSS Custom Properties */
+  :root {
+    --main-bg: #0f00e6;
+    --top-menu-bg: hsl(0, 0%, 61%);
+    --sub-menu-bg: #292794;
+  }
+
+  .menu-link {
+    color: #333;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.menu-link:hover {
+  color: rgba(110, 110, 114, 0.445);
+}
+
+  body {
+    font-family: Tahoma, Geneva, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 3rem auto;
+    color: rgb(145, 145, 145);
+  }
+  
+  .flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  nav a {
+    line-height: 3rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+  }
+  
+  #top-menu a:hover {
+    background-color: var(--sub-menu-bg);
+  }
+  header, #top-menu {
+    position: relative;
+  }
+  
+  #top-menu {
+    z-index: 20;
+  }
+  
+  #sub-menu {
+    width: 100%;
+    z-index: 10;
+    transition: top 0.5s ease-out;
+  }
+  
+  #sub-menu a:hover {
+    background-color: var(--top-menu-bg);
+  }
+  
+  nav a.active {
+    background-color: var(--sub-menu-bg);
+    color: var(--main-bg);
+  }
